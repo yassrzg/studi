@@ -471,3 +471,8 @@ a {
     align-items: center;
     flex-wrap: wrap;
 }
+
+#btn-setting {
+    margin-left: 1rem;
+
+}
