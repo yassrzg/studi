@@ -1,0 +1,126 @@
+{% extends 'base.html.twig' %}
+
+{% block carousel %} {% endblock %}
+
+{% block content %}
+
+    <h2 class="mb-5 mt-3 text-center">Nos Meilleurs Plat</h2>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+
+        {% for bestMenu in bestMenu%}
+        <div class="col-md-4">
+            <div class="card card-produit">
+                <img src="/Uploads/{{ bestMenu.illustration }}" alt="{{ bestMenu.name }}" class="card-img-top" id="img-best">
+                <div class="card-body">
+                    <h3 class="text-center mb-5">{{ bestMenu.name }}</h3>
+                    <p>{{ bestMenu.description }}</p>
+                    <h3>{{ bestMenu.titreIllustration }}</h3>
+                    <p>{{ (bestMenu.price/100)|number_format(2, ',', '.') }} €</p>
+                    <div class="text-center mt-5">
+                        <button class="text-center btn-reservation">
+                            <a href="{{ path('app_reservation') }}" role="button" class="reservation-btn">Reserver</a>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div id="formule">
+        {% for categorie in formule %}
+            {% if categorie.nomCategorie == "Formule / Menu" %}
+                    <h2 class="title-produit text-center">{{ categorie.nomCategorie }}</h2>
+
+                    <div class="row g-2">
+                        {% for produit in categorie.produits %}
+                            <div class="col-6 formule-card">
+                                <div class="card formule">
+                                    <img src="/Uploads/{{ produit.illustration }}" alt="{{ produit.name }}" class="img-fluid">
+                                    <div class="card-body">
+                                        <h4 class="text-center mb-4">{{ produit.name }}</h4>
+                                        <p><small>{{ produit.titreIllustration }}</small></p>
+                                        <p><span>{{ (produit.price / 100)|number_format(2, ',', '.')}} €</span></p>
+                                    </div>
+                                    <div class="text-center mt-5">
+                                        <button class="text-center btn-reservation">
+                                            <a href="{{ path('app_reservation') }}" role="button" class="reservation-btn">Je Reserve !</a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row">
+        <div class="col-md-12">
+            {% if form_hours is not empty %}
+                <div>
+                    <div>
+                        <div>
+                            <h2 class="text-center"><span>Nos</span><br/> <span>Horaires d'ouverture</span></h2>
+
+                        </div>
+                    </div>
+                    <div class="span-content-hours">
+                        <hr class="featurette-divider span-hours">
+                    </div>
+
+                    <div class="day-hours mt-5">
+
+                        {% for hour in form_hours %}
+                            <div class="hours">
+                                <p class="hour-jours text-center">{{ hour.jours }}</p>
+                                <div >
+                                    {% if hour.openHours %}
+                                        <div class="hours-jours">
+                                            <p class="mr-3">{{ hour.openHours|date('H:i') }}</p>
+                                            <p class="hours-open-jours">{{ hour.closeHours|date('H:i') }}</p>
+                                        </div>
+
+                                    {% else %}
+
+                                        <p colspan="2" class="text-center">Fermer</p>
+
+                                    {% endif %}
+
+                                    {% if hour.openhourssoir %}
+                                        <div class="hours-jours">
+                                            <p class="mr-3">{{ hour.openhourssoir|date('H:i') }}</p>
+                                            <p>{{ hour.closehourssoir|date('H:i') }}</p>
+                                        </div>
+
+                                    {% else %}
+
+                                        <p colspan="2" class="text-center">Fermer</p>
+
+                                    {% endif %}
+
+
+
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% else %}
+                <p>Aucune heure d'ouverture n'est disponible pour le moment.</p>
+            {% endif %}
+        </div>
+    </div>
+
+
+
+
+<!-- /END THE FEATURETTES -->
+{% endblock %}

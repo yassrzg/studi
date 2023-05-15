@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AccountController!{% endblock %}
+
+{% block content %}
+    <div>
+        <h2>Bienvenue {{ app.user.firstname }} !</h2>
+        <div class="mt-5">
+            <h3 class="mt-3">Changer mon mot de passe</h3>
+            <h3 class="mt-3">Changer mes allergies déclarer</h3>
+            <button class="mt-3"><a href="{{ path('app_reservation') }}">Je Réserve !</a></button>
+
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

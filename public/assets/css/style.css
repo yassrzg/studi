@@ -1,0 +1,473 @@
+
+.produit-content {
+    margin-bottom: 4rem;
+}
+
+
+.title-produit {
+    margin-bottom: 4rem;
+}
+
+.title-page {
+    margin-bottom: 5rem;
+}
+.card-produit{
+    padding: 1rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+}
+
+.card-produit img {
+    height: 10rem;
+    border-radius: 0.5rem;
+}
+
+
+
+/* best Menu */
+
+#img-best {
+    width: 100%;
+    height: 20rem;
+    padding: 1rem;
+    border-radius: 2rem;
+}
+
+.card-best {
+    margin-bottom: 4rem;
+    border-radius: 0.5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.btn-reservation {
+    background-color: #906427;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    border: none;
+}
+
+.reservation-btn:hover {
+    text-decoration: none;
+    outline: none;
+    color: black;
+}
+
+button a {
+    color: white;
+}
+
+/* FORMULE /MENU */
+
+#formule {
+    margin-top: 5rem;
+}
+
+.formule img{
+    height: 18rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.formule {
+    padding: 2rem;
+}
+
+.formule-card {
+    border-radius: 0.5rem;
+}
+
+
+.day-hours {
+    display: flex;
+    justify-content: center;
+}
+
+.hours-jours {
+    display: flex;
+    font-weight: bold;
+}
+
+.hours {
+    margin-right: 4rem;
+}
+
+.span-hours {
+    width: 15%;
+    background-color:red;
+    height: 3px;
+    border-radius: 3rem;
+}
+
+.span-content-hours {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 4rem;
+    align-items: center;
+}
+
+
+.reservation-date {
+    display: flex;
+}
+
+
+.reservation-allergie {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    padding-left: 0 !important;
+}
+#reservation_allergie .form-check {
+font-size: 0.6rem;
+    padding-left: 0;
+}
+
+#reservation_Heure {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+#reservation_Heure div.form-check {
+    margin-bottom: 1rem;
+}
+
+fieldset {
+    margin-top: 2rem;
+}
+
+#reservation_allergie label{
+    border: 3px white solid;
+    padding: 0.5rem 2rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    float: left;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+#reservation_allergie input[type="checkbox"]{
+    display: none;
+}
+
+
+#reservation_allergie input[type="checkbox"]:checked + label{
+    background: green;
+    color: white;
+}
+
+
+#reservation_Heure label{
+    border: 3px white solid;
+    padding: 0.5rem 2rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    float: left;
+    font-size: 1em;
+    cursor: pointer;
+}
+#reservation_Heure input[type="radio"]{
+    display: none;
+}
+
+ #reservation_Heure input[type="radio"]:checked + label{
+    background: black;
+    color: #B04AB3;
+}
+
+ .btn-rez {
+     padding: 1rem 2rem;
+
+ }
+ .btn-rez-countainer {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+ }
+
+ .margin-top {
+     margin: 3rem 0;
+     padding: 0 10%;
+ }
+
+ body {
+     background-color: beige;
+ }
+
+
+ /* LOGIN */
+
+#form-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: auto;
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 15px 15px 10px rgba(5, 5, 5, 0.3);
+    background-color: #ffffff;
+    margin: 60px auto;
+
+
+}
+
+
+#form-content-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    width: 100%;
+}
+
+#logo-login {
+    width: 150px;
+    height: auto;
+    margin-bottom: 40px;
+    border-radius: 15%;
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.h2-login  {
+    margin-bottom: 60px;
+    text-align: center;
+    font-size: 30px;
+    font-family: Poppins, sans-serif;
+}
+
+
+
+.form-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    width: 100%;
+}
+
+
+
+/* BTN */
+
+
+
+.button-1-login {/*
+    padding: 10px 40px;
+    border-radius: 5px;
+    margin-right: 0.5em;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    background-color: #6b6666;
+    color: white;
+    */
+    position: relative;
+    display: inline-block;
+    padding: 10px 0;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s ease-in-out;
+    letter-spacing: 4px;
+    margin-right: 15px;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.button-1-login:hover {
+    /*
+    background-color: black;
+    color: white;
+    */
+    background: #03f40f;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03f40f,
+    0 0 25px #03f40f,
+    0 0 50px #03f40f,
+    0 0 100px #03f40f;
+}
+
+.button-1-login span {
+    position: absolute;
+    display: block;
+}
+
+@keyframes btn-anim1 {
+    0% {
+        left: -100%;
+    }
+
+    50%,100% {
+        left: 100%;
+    }
+}
+
+.button-1-login span:nth-child(1) {
+    bottom: 0px;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #03f40f);
+    animation: btn-anim1 4s linear infinite;
+}
+
+a {
+    text-decoration:none ;
+    color: white;
+}
+
+
+
+
+.link-cnx {
+    color: #292934;
+    margin-top: 1rem;
+    font-size: small;
+}
+
+.btn-login {
+    width: 80%;
+    margin-top: 2rem;
+}
+
+.button-3-login{
+    width: 50%;
+    margin-top:1rem;
+    margin-bottom:20px;
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    background-color: #252525;
+    color: white;
+}
+
+.button-3-login:hover {
+    background-color: red;
+    color: white;
+}
+
+
+
+/* UI LOGIN */
+.field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    border-radius: 10px;
+    padding: 0.6em;
+    border: none;
+    outline: none;
+    color: black;
+    background-color: white;
+    box-shadow:  2px 5px 10px rgb(5, 5, 5);
+    margin-bottom: 30px;
+    width: 80%;
+}
+
+.input-icon {
+    height: 1.3em;
+    width: 1.3em;
+    fill: black;
+}
+
+.input-field {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: black;
+}
+
+.form-box h2 {
+    margin-bottom: 2.5rem;
+}
+
+
+
+/* SIGNIN */
+#form {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+#form-content {
+   border-radius: 0.5rem;
+    box-shadow: 2px 5px 10px rgb(5, 5, 5);
+    padding: 2rem 5rem;
+    width: 90%;
+    background-color: #ffffff;
+}
+
+.padding-left {
+    padding-left: 2.5rem;
+}
+
+.padding-right {
+    padding-right: 2.5rem;
+}
+
+.btn-sign-in {
+    font-size: 1.3rem;
+    margin-left: 1rem;
+}
+
+.inscription {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inscription a {
+    color: black;
+    margin-left: 1rem;
+    font-size: small;
+}
+
+#form_register_firstname, #form_register_lastname, #form_register_email, #form_register_password_first, #form_register_password_second {
+    box-shadow: 2px 5px 10px rgb(5, 5, 5);
+}
+
+.form-reservation-content {
+    box-shadow: 15px 15px 10px rgba(5, 5, 5, 0.3);
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    padding: 4rem 7rem;
+}
+
+#reservation_name, #reservation_lastname, #reservation_email, #reservation_date, #reservation_couverts {
+    box-shadow: 2px 5px 10px rgb(5, 5, 5);
+}
+
+#reservation_allergie {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}

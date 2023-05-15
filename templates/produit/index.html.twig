@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos Produits{% endblock %}
+
+{% block content %}
+
+    <div class="mt-5">
+        <h1 class="title-page">Nos Produits</h1>
+
+        {% for categorie in produitsTries %}
+            {% if categorie.nomCategorie != "Formule / Menu" %}
+
+                <div class="produit-content">
+
+
+                    <h2 class="title-produit text-center mb-5">{{ categorie.nomCategorie }}</h2>
+
+                        <div class="row g-3">
+                            {% for produit in categorie.produits %}
+                                <div class="col-4">
+                                    <div class="card card-produit">
+                                        <img src="/Uploads/{{ produit.illustration }}" alt="{{ produit.name }}" class="img-fluid">
+                                        <div class="card-body">
+                                            <h4 class="text-center mb-5">{{ produit.name }}</h4>
+                                            <small>{{ produit.titreIllustration }}</small>
+                                            <span>{{ (produit.price / 100)|number_format(2, ',', '.')}} €</span>
+                                        </div>
+                                        <div class="text-center mt-5">
+                                            <button class="text-center btn-reservation">
+                                                <a href="{{ path('app_reservation') }}" role="button" class="reservation-btn">Reserver</a>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                </div>
+
+                <hr class="featurette-divider">
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}
