@@ -4,35 +4,25 @@ namespace App\Controller;
 
 use AllowDynamicProperties;
 use App\Classe\Mail;
-use App\Entity\Allergie;
 use App\Entity\Creneaux;
-
 use App\Entity\Reservation;
-use App\Entity\User;
 use App\Form\ReservationType;
 use App\Repository\CreneauxRepository;
-use App\Repository\ReservationRepository;
 use App\Repository\RestaurantHoursRepository;
 use DateInterval;
 use DateTime;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
-use Symfony\Component\Form\Extension\Core\Type\HiddenType;
-use Symfony\Component\Form\Extension\Core\Type\RadioType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\RestaurantHours;
 use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\Validator\Constraints\Date;
-use Symfony\Component\Validator\Constraints\GreaterThanOrEqual;
-use Symfony\Component\Validator\Constraints\Time;
-use Vtiful\Kernel\Format;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+
 
 #[AllowDynamicProperties] class ReservationController extends AbstractController
 {
@@ -45,7 +35,7 @@ use Vtiful\Kernel\Format;
     }
 
     #[Route('/reservations/{dateReservation<\d{4}-\d{2}-\d{2}>?}', name: 'app_reservation')]
-    public function index(EntityManagerInterface $entityManager, Request $request, RestaurantHoursRepository $restaurantHoursRepository, CreneauxRepository $creneauxRepository ,$dateReservation): Response
+    public function index(EntityManagerInterface $entityManager, Request $request, RestaurantHoursRepository $restaurantHoursRepository, CreneauxRepository $creneauxRepository , UrlGeneratorInterface $urlGenerator,$dateReservation): Response
     {
         $notification = null;
         $notificationEchec = null;
@@ -211,7 +201,7 @@ use Vtiful\Kernel\Format;
                                     $allergiesMail = $reservation->getAllergie();
                                     $allergiesMailStr = '';
                                     foreach ($allergiesMail as $allergie) {
-                                        $allergiesMailStr .= $allergie->getName() . ', ';
+                                        $allergiesMailStr .= $allergie. ', ';
                                     }
                                     $allergiesStr = rtrim($allergiesMailStr, ', ');
                                 }
@@ -254,14 +244,6 @@ use Vtiful\Kernel\Format;
                             $reservation->setAllergie($allergiesArray);
 
 
-
-
-
-
-
-
-
-
                         }
                         // si pas connecter je récup les data allergie selectionner
                         else{
@@ -274,7 +256,7 @@ use Vtiful\Kernel\Format;
 
                         // je transmet toute la data
                         $reservation->setAllergie($allergiesArray);
-                            dd($reservation);
+
                     }
 
                     $entityManager->persist($creneau);
@@ -291,7 +273,8 @@ use Vtiful\Kernel\Format;
                         $allergiesMail = $reservation->getAllergie();
                         $allergiesMailStr = '';
                         foreach ($allergiesMail as $allergie) {
-                            $allergiesMailStr .= $allergie->getName() . ', ';
+                            // modif ici getname()
+                            $allergiesMailStr .= $allergie. ', ';
                         }
                         $allergiesStr = rtrim($allergiesMailStr, ', ');
                     }

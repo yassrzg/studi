@@ -27,8 +27,8 @@ class Reservation
     #[ORM\Column]
     private ?int $couverts = null;
 
-    #[ORM\ManyToMany(targetEntity: Allergie::class, inversedBy: 'reservations')]
-    private Collection $allergie;
+//    #[ORM\ManyToMany(targetEntity: Allergie::class, inversedBy: 'reservations')]
+//    private Collection $allergie;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $Date = null;
@@ -108,9 +108,9 @@ class Reservation
     /**
      * @return Collection<int, Allergie>
      */
-    public function getAllergie(): Collection
+    public function getAllergie(): ?array
     {
-        return $this->allergie;
+        return $this->Allergie;
     }
 
     public function addAllergie(Allergie $allergie): self
