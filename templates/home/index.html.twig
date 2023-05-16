@@ -3,6 +3,9 @@
 {% block carousel %} {% endblock %}
 
 {% block content %}
+    <div class="img-logo">
+        <img src="{{ asset('imgLogo/logo.png') }}" id="imgLogo" class="img-fluid"/>
+    </div>
 
     <h2 class="mb-5 mt-3 text-center">Nos Meilleurs Plat</h2>
     <div class="row row-cols-1 row-cols-md-2 g-4">
@@ -10,11 +13,13 @@
         {% for bestMenu in bestMenu%}
         <div class="col-md-4">
             <div class="card card-produit">
-                <img src="/Uploads/{{ bestMenu.illustration }}" alt="{{ bestMenu.name }}" class="card-img-top" id="img-best">
+                <div id="img">
+                    <img src="/Uploads/{{ bestMenu.illustration }}" alt="{{ bestMenu.name }}" class="card-img-top" id="img-best">
+                </div>
                 <div class="card-body">
                     <h3 class="text-center mb-5">{{ bestMenu.name }}</h3>
                     <p>{{ bestMenu.description }}</p>
-                    <h3>{{ bestMenu.titreIllustration }}</h3>
+                    <h3 id="title-img">{{ bestMenu.titreIllustration }}</h3>
                     <p>{{ (bestMenu.price/100)|number_format(2, ',', '.') }} €</p>
                     <div class="text-center mt-5">
                         <button class="text-center btn-reservation">
@@ -117,6 +122,17 @@
                 <p>Aucune heure d'ouverture n'est disponible pour le moment.</p>
             {% endif %}
         </div>
+    </div>
+
+    <div>
+
+
+</div>
+
+        <div>
+
+        </div>
+
     </div>
 
 

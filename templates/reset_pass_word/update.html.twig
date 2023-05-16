@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Forget Password{% endblock %}
+
+{% block content %}
+    <div class="block-small" id="form-login">
+        {% for message in app.flashes('notice') %}
+            <div class="alert-info alert">{{ message }}</div>
+        {% endfor %}
+        {{ form(form) }}
+    </div>
+{% endblock %}

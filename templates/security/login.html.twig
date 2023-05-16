@@ -41,24 +41,8 @@
                         <p class="link-cnx text-center">Pas de compte ? Inscrivez vous</p>
                     </a>
                 </div>
-                <button class="button-3-login">Forgot Password</button>
+                <a href="{{ path('app_reset_pass_word') }}" class="button-3-login text-center">Forgot Password</a>
             </div>
         </form>
     </div>
-<!--
-            </div>
-
-            <label for="inputEmail">Email</label>
-            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Votre email" autocomplete="email" required autofocus>
-            <label for="inputPassword">Password</label>
-            <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" placeholder="Votre mot de passe" required>
-
-            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-
-
-
-
-            <button class="btn btn-lg btn-primary mt-4" type="submit">Sign in</button>
-        </form>
-    </div> -->
 {% endblock %}

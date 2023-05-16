@@ -38,12 +38,9 @@ class SettingAccountType extends AbstractType
                 'first_options' => ['label' => 'Password'],
                 'second_options' => ['label' => 'Confirm Password']
             ])
-            ->add('Allergie', TextType::class, [
-                'disabled' => true
-            ])
             ->add('alergieType', EntityType::class, [
                 'class' => Allergie::class,
-                'label' => 'Selectionner vos allergies',
+                'label' => 'Selectionnez vos allergies',
                 'required' => false,
                 'multiple' => true,
                 'expanded' => true,
