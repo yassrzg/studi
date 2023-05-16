@@ -13,19 +13,6 @@
 
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
 
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-
-
-    </style>
     <!-- Custom styles for this template -->
     <link href="{{ asset('assets/css/carousel.css') }}" rel="stylesheet">
 </head>
@@ -64,6 +51,22 @@
 
     <div class="container marketing">
         {% block content %}
+            {% block javascript %}
+            <script>
+                let titleImg = document.querySelector('#title-img');
+                let imgProduct = document.querySelector('#img');
+
+                imgProduct.addEventListener('mouseover', ()=> {
+
+                titleImg.classList.add('img');
+                imgProduct.style.display ="block";
+
+            })
+            </script>
+
+
+
+            {% endblock %}
         {% endblock %}
 
 

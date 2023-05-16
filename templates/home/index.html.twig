@@ -13,13 +13,13 @@
         {% for bestMenu in bestMenu%}
         <div class="col-md-4">
             <div class="card card-produit">
-                <div id="img">
+                <div id="img" class="img-produit">
                     <img src="/Uploads/{{ bestMenu.illustration }}" alt="{{ bestMenu.name }}" class="card-img-top" id="img-best">
                 </div>
                 <div class="card-body">
                     <h3 class="text-center mb-5">{{ bestMenu.name }}</h3>
                     <p>{{ bestMenu.description }}</p>
-                    <h3 id="title-img">{{ bestMenu.titreIllustration }}</h3>
+                    <h3 id="title-img" class="title-img">{{ bestMenu.titreIllustration }}</h3>
                     <p>{{ (bestMenu.price/100)|number_format(2, ',', '.') }} €</p>
                     <div class="text-center mt-5">
                         <button class="text-center btn-reservation">
@@ -124,19 +124,29 @@
         </div>
     </div>
 
-    <div>
+
+    {% block javascript %}
+    <script>
+        let titleImgs = document.querySelectorAll('.title-img');
+        let imgProducts = document.querySelectorAll('.img-produit');
+
+        imgProducts.forEach((imgProduct, index) => {
+        imgProduct.addEventListener('mouseover', () => {
+            imgProduct.classList.add('img');
+            titleImgs[index].style.display = "block";
+        });
+
+        imgProduct.addEventListener('mouseout', () => {
+        imgProduct.classList.remove('img');
+        titleImgs[index].style.display = "none";
+    });
+    });
+    </script>
+    {% endblock %}
 
 
-</div>
-
-        <div>
-
-        </div>
-
-    </div>
 
 
 
-
-<!-- /END THE FEATURETTES -->
+    <!-- /END THE FEATURETTES -->
 {% endblock %}
