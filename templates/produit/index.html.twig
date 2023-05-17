@@ -4,40 +4,50 @@
 
 {% block content %}
 
+    {#{% for cat in categories %}#}
+    {#    <li>{{  cat.name }}</li>#}
+    {#    {% set foo = cat.nosProduits %}#}
+    {#    {% for bar in foo %}#}
+    {#        {{  bar.name }}#}
+
+    {#        {% endfor %}#}
+    {#{% endfor %} #}
+
+
     <div class="mt-5">
         <h1 class="title-page">Nos Produits</h1>
 
-        {% for categorie in produitsTries %}
-            {% if categorie.nomCategorie != "Formule / Menu" %}
+        {% for cat in categories %}
 
-                <div class="produit-content">
+            <div class="produit-content">
 
 
-                    <h2 class="title-produit text-center mb-5">{{ categorie.nomCategorie }}</h2>
+                <h2 class="title-produit text-center mb-5">{{  cat.name }}</h2>
+                {% set foo = cat.nosProduits %}
 
-                        <div class="row g-3">
-                            {% for produit in categorie.produits %}
-                                <div class="col-4">
-                                    <div class="card card-produit">
-                                        <img src="/Uploads/{{ produit.illustration }}" alt="{{ produit.name }}" class="img-fluid">
-                                        <div class="card-body">
-                                            <h4 class="text-center mb-5">{{ produit.name }}</h4>
-                                            <small>{{ produit.titreIllustration }}</small>
-                                            <span>{{ (produit.price / 100)|number_format(2, ',', '.')}} €</span>
-                                        </div>
-                                        <div class="text-center mt-5">
-                                            <button class="text-center btn-reservation">
-                                                <a href="{{ path('app_reservation') }}" role="button" class="reservation-btn">Reserver</a>
-                                            </button>
-                                        </div>
-                                    </div>
+                <div class="row g-3">
+                    {% for bar in foo %}
+                        <div class="col-4">
+                            <div class="card card-produit">
+                                <img src="/Uploads/{{ bar.illustration }}" alt="{{ bar.name }}" class="img-fluid">
+                                <div class="card-body">
+                                    <h4 class="text-center mb-5">{{   bar.name }}</h4>
+                                    <small>{{ bar.titreIllustration }}</small>
+                                    <span>{{ (bar.price / 100)|number_format(2, ',', '.')}} €</span>
                                 </div>
-                            {% endfor %}
+                                <div class="text-center mt-5">
+                                    <button class="text-center btn-reservation">
+                                        <a href="{{ path('app_reservation') }}" role="button" class="reservation-btn">Reserver</a>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
+                    {% endfor %}
                 </div>
+            </div>
 
-                <hr class="featurette-divider">
-            {% endif %}
+            <hr class="featurette-divider">
         {% endfor %}
     </div>
+
 {% endblock %}

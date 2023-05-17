@@ -42,7 +42,9 @@ h1,h2 {
 
 
 .title-produit {
+    margin-top: 2rem;
     margin-bottom: 4rem;
+
 }
 
 .title-page {
@@ -129,6 +131,12 @@ button a {
 }
 #formule {
     margin-top: 5rem;
+    padding: 1rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+    background-color: #ddbe98;
+    border: none;
 }
 
 .formule img{

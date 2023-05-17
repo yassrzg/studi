@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 
+use App\Entity\Menu;
 use App\Entity\NosProduits;
 use App\Repository\NosProduitsRepository;
 use App\Repository\RestaurantHoursRepository;
@@ -25,25 +26,20 @@ class HomeController extends AbstractController
     {
         $bestMenu = $this->entityManager->getRepository(NosProduits::class)->findByBestMenu(1);
         $form_hours= $restaurantHoursRepository->findAllByDay();
-        $formules = $this->entityManager->getRepository(NosProduits::class)->findAll();
-        $produitsTries = [];
-        foreach ($formules as $formule) {
-            $categorie = $formule->getCategory();
-            if (!isset($produitsTries[$categorie->getId()])) {
-                $produitsTries[$categorie->getId()] = [
-                    'nomCategorie' => $categorie->getName(),
-                    'produits' => [],
-                ];
-            }
-            $produitsTries[$categorie->getId()]['produits'][] = $formule;
-        }
+
+        $menu = $this->entityManager->getRepository(Menu::class)->findAll();
+
 
 
 
         return $this->render('home/index.html.twig', [
             'bestMenu' => $bestMenu,
             'form_hours' => $form_hours,
-            'formule' => $produitsTries,
+            'menu' => $menu
         ]);
+    }
+
+    private function getDoctrine()
+    {
     }
 }

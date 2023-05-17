@@ -34,7 +34,8 @@ class NosProduitsCrudController extends AbstractCrudController
             TextareaField::new('description'),
             AssociationField::new('category'),
             MoneyField::new('price')->setCurrency('EUR'),
-            BooleanField::new('bestMenu')
+            BooleanField::new('bestMenu'),
+            AssociationField::new('menu')
         ];
     }
 

@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Allergie;
 use App\Entity\Categorie;
 use App\Entity\Creneaux;
+use App\Entity\Menu;
 use App\Entity\NosProduits;
 use App\Entity\Reservation;
 use App\Entity\RestaurantHours;
@@ -60,5 +61,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud("Liste d'allergie", 'fa fa-hand-dots', Allergie::class);
         yield MenuItem::linkToCrud('Place Disponible', 'fa fa-chair', Creneaux::class);
         yield MenuItem::linkToCrud('Donnée Restaurant', 'fa fa-database', RestaurantHours::class);
+        yield MenuItem::linkToCrud('Formule', 'fas fa-list', Menu::class);
     }
 }

@@ -42,6 +42,9 @@ class NosProduits
     #[ORM\Column]
     private ?bool $bestMenu = null;
 
+    #[ORM\ManyToOne(inversedBy: 'formules')]
+    private ?Menu $menu = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -154,5 +157,23 @@ class NosProduits
 
         return $this;
     }
+
+    public function getMenu(): ?Menu
+    {
+        return $this->menu;
+    }
+
+    public function setMenu(?Menu $menu): self
+    {
+        $this->menu = $menu;
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->name;
+    }
+
 
 }

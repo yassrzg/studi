@@ -4,6 +4,7 @@ namespace App\Controller;
 
 
 
+use App\Entity\Categorie;
 use App\Entity\NosProduits;
 use App\Repository\CategorieRepository;
 use App\Repository\NosProduitsRepository;
@@ -25,21 +26,14 @@ class ProduitController extends AbstractController
     public function index(NosProduitsRepository $produitRepo): Response
     {
 
-        $produits = $produitRepo->findAll();
-        $produitsTries = [];
-        foreach ($produits as $produit) {
-            $categorie = $produit->getCategory();
-            if (!isset($produitsTries[$categorie->getId()])) {
-                $produitsTries[$categorie->getId()] = [
-                    'nomCategorie' => $categorie->getName(),
-                    'produits' => [],
-                ];
-            }
-            $produitsTries[$categorie->getId()]['produits'][] = $produit;
-        }
+        $categorie = $this->entityManager->getRepository(Categorie::class)->findAll();
+
+
+
 
         return $this->render('produit/index.html.twig', [
-            'produitsTries' => $produitsTries,
+            'categories' => $categorie
         ]);
+
     }
 }

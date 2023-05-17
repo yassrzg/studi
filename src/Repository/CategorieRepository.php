@@ -64,7 +64,8 @@ class CategorieRepository extends ServiceEntityRepository
     {
         $query = $this->entityManager->createQueryBuilder();
         $query->select('u')
-            ->from(Categorie::class, 'u');
+            ->from(Categorie::class, 'u')
+            ->join();
 
         $qb = $query->getQuery();
         return $qb->execute();
