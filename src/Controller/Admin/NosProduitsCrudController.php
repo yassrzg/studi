@@ -28,8 +28,9 @@ class NosProduitsCrudController extends AbstractCrudController
                 ->setUploadedFileNamePattern('[randomhash]. [extension]')
                 ->setRequired(false),
             TextField::new('name')
-            ->setLabel('Nom'),
-            TextField::new('titreIllustration'),
+                 ->setLabel('Nom'),
+            TextField::new('titreIllustration')
+                ->setRequired(false),
             TextField::new('subtitle'),
             TextareaField::new('description'),
             AssociationField::new('category'),

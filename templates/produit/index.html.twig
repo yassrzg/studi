@@ -4,14 +4,6 @@
 
 {% block content %}
 
-    {#{% for cat in categories %}#}
-    {#    <li>{{  cat.name }}</li>#}
-    {#    {% set foo = cat.nosProduits %}#}
-    {#    {% for bar in foo %}#}
-    {#        {{  bar.name }}#}
-
-    {#        {% endfor %}#}
-    {#{% endfor %} #}
 
 
     <div class="mt-5">
@@ -27,13 +19,18 @@
 
                 <div class="row g-3">
                     {% for bar in foo %}
-                        <div class="col-4">
+                        <div class="col-lg-4">
                             <div class="card card-produit">
-                                <img src="/Uploads/{{ bar.illustration }}" alt="{{ bar.name }}" class="img-fluid">
+                                {% if bar.illustration %}
+                                <div id="img" class="img-produit">
+                                    <img src="/Uploads/{{ bar.illustration }}" alt="{{ bar.name }}" class="img-fluid">
+                                </div>
+                                {% endif %}
                                 <div class="card-body">
-                                    <h4 class="text-center mb-5">{{   bar.name }}</h4>
-                                    <small>{{ bar.titreIllustration }}</small>
-                                    <span>{{ (bar.price / 100)|number_format(2, ',', '.')}} €</span>
+                                    <h3 class="text-center mb-5">{{   bar.name }}</h3>
+                                    <h3 id="title-img-produit" class="title-img">{{ bar.titreIllustration }}</h3>
+                                    <p>{{ bar.description }}</p>
+                                    <p>{{ (bar.price / 100)|number_format(2, ',', '.')}} €</p>
                                 </div>
                                 <div class="text-center mt-5">
                                     <button class="text-center btn-reservation">
@@ -49,5 +46,26 @@
             <hr class="featurette-divider">
         {% endfor %}
     </div>
+
+
+    {% block javascript %}
+    <script>
+        let titleImgs = document.querySelectorAll('.title-img');
+        let imgProducts = document.querySelectorAll('.img-produit');
+
+        imgProducts.forEach((imgProduct, index) => {
+        imgProduct.addEventListener('mouseover', () => {
+            imgProduct.classList.add('img');
+            titleImgs[index].style.display = "block";
+        });
+
+        imgProduct.addEventListener('mouseout', () => {
+        imgProduct.classList.remove('img');
+        titleImgs[index].style.display = "none";
+    });
+    });
+    </script>
+    {% endblock %}
+
 
 {% endblock %}

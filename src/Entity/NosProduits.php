@@ -17,10 +17,9 @@ class NosProduits
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $slug = null;
 
-    #[ORM\Column(length: 255)]
+
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $illustration = null;
 
     #[ORM\Column(length: 255)]
@@ -36,7 +35,7 @@ class NosProduits
     #[ORM\JoinColumn(nullable: false)]
     private ?Categorie $category = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $titreIllustration = null;
 
     #[ORM\Column]
@@ -62,17 +61,7 @@ class NosProduits
         return $this;
     }
 
-    public function getSlug(): ?string
-    {
-        return $this->slug;
-    }
 
-    public function setSlug(string $slug): self
-    {
-        $this->slug = $slug;
-
-        return $this;
-    }
 
     public function getIllustration(): ?string
     {

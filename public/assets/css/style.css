@@ -46,6 +46,13 @@ h1,h2 {
     margin-bottom: 4rem;
 
 }
+.btn-reservation-formule {
+    background-color: #906427;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    border: none;
+}
 
 .title-page {
     margin-bottom: 5rem;
@@ -57,12 +64,31 @@ h1,h2 {
     border-radius: 0.5rem;
     background-color: #ddbe98;
     border: none;
+    height: 35rem;
+    overflow: hidden;
     /*#b1834b*/
+}
+.card-produit-home{
+    padding: 1rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+    background-color: #ddbe98;
+    border: none;
+    height: 45rem;
+    overflow: hidden;
+    /*#b1834b*/
+}
+
+.svg-user  {
+    width: 30px;
+    margin-right: 0.5rem;
 }
 
 .card-produit img {
     height: 10rem;
     border-radius: 0.5rem;
+    width: 100%;
 }
 
 
@@ -106,12 +132,24 @@ a {
     padding: 1rem 1.5rem;
     border-radius: 1rem;
     border: none;
+    position: absolute;
+    bottom: 2%;
+    right: 35%;
 }
 
 .reservation-btn:hover {
     text-decoration: none;
     outline: none;
     color: black;
+}
+
+#title-img-produit {
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    transform: translate(-50%, -50%);
+    color: white;
+    display: none;
 }
 
 button a {
@@ -537,7 +575,6 @@ a {
 #reservation_allergie {
     box-sizing: border-box;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -555,4 +592,79 @@ a {
     justify-content: center;
     align-items: center;
     margin: 5rem 0;
+}
+
+#img-logo-nav {
+    display: none;
+}
+
+/* MEDIA QUERRIES PHONE */
+
+@media (max-width: 767px) {
+
+    #img-logo-nav {
+        width: 110px;
+        background-color: white;
+        border-radius: 0.5rem;
+        display: block;
+    }
+    #navbar-phone {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+    #container-img-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .navbar-toggler {
+        font-size: 1.5rem;
+        margin-left: 1rem;
+    }
+
+    .df-home {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .hours {
+        margin-bottom: 1rem;
+        margin-right: 2rem;
+    }
+    .day-hours {
+        flex-wrap: wrap;
+    }
+    #form-login {
+        width: 100%;
+        padding: 30px 0;
+    }
+
+    .container {
+        padding: 0;
+    }
+    .form-box {
+        margin-left: 0;
+    }
+
+    .pd-1 {
+        padding: 0;
+    }
+    #form-content {
+        padding: 2rem ;
+        width: 100%;
+    }
+
+    .inscription {
+        flex-wrap: wrap;
+    }
+    .form-reservation-content {
+        padding: 2rem 1rem;
+    }
+    .btn-phone {
+        text-align: center;
+        margin: auto;
+        margin-top: 1rem;
+    }
 }

@@ -17,44 +17,44 @@
                 <h2 class="mb-5 text-center">Formulaire de Réservation</h2>
                     {{ form_start(form) }}
                 <div class="row g-2">
-                    <div class="col-6">
+                    <div class="col-lg-6">
                         {{ form_row(form.date) }}
                     </div>
-                    <div class="col-6">
+                    <div class="col-lg-6">
                         {{ form_row(form.couverts) }}
                     </div>
-                    <div class="col-6">
+                    <div class="col-lg-6">
                         {{ form_row(form.name, {'value': app.user.firstname, 'attr': {'readonly': true}}) }}
                     </div>
-                    <div class="col-6">
+                    <div class="col-lg-6">
                         {{ form_row(form.lastname, {'value': app.user.lastname, 'attr': {'readonly': true}}) }}
                     </div>
-                    <div class="col-12">
+                    <div class="col-lg-12">
                         {{ form_row(form.email, {'value': app.user.email, 'attr': {'readonly': true}}) }}
                     </div>
 
-                    <div class="col-6">
+                    <div class="col-lg-6">
                         {{ form_row(form.allergie) }}
                     </div>
                         {{ form_row(form._token) }}
 
                         {% if times %}
-                            <div class="col-6">
+                            <div class="col-lg-6">
                             {{ form_row(form.Heure) }}
                             </div>
                             <div class="btn-rez-countainer">
                             {{ form_widget(form.submit, {'attr': {'class': 'btn btn-outline-success btn-rez text-center'}}) }}
                             </div>
                             {% if notification %}
-                                <button class="btn btn-outline-dark">Retourner sur la Page d'acceuil</button>
+                                <button class="btn btn-outline-dark btn-phone">Retourner sur la Page d'acceuil</button>
 
                             {% endif %}
 
                         {% else %}
-                            <div class="col-6">
+                            <div class="col-lg-6">
                                 <p>Pas de créneaux disponible</p>
                             </div>
-                    {% endif %}
+                        {% endif %}
 
                     {{ form_end(form) }}
                 </div>
@@ -68,49 +68,45 @@
                 <h2 class="mb-5 text-center">Formulaire de Réservation</h2>
                 {{ form_start(form) }}
                 <div class="row g-2">
-                    <div class="col-6">
+                    <div class="col-lg-6">
                         {{ form_row(form.date) }}
                     </div>
-                    <div class="col-6">
+                    <div class="col-lg-6">
                         {{ form_row(form.couverts) }}
                     </div>
-                    <div class="col-6">
+                    <div class="col-lg-6">
                         {{ form_row(form.name) }}
                     </div>
-                    <div class="col-6">
+                    <div class="col-lg-6">
                         {{ form_row(form.lastname) }}
                     </div>
-                    <div class="col-12">
+                    <div class="col-lg-12">
                     {{ form_row(form.email) }}
                     </div>
 
 
-                    <div class="col-6 text-center">
+                    <div class="col-lg-6 text-center">
                         {{ form_row(form.allergie, {'label_attr': {'class': 'allergie'}, 'attr': {'class': 'reservation-allergie'}}) }}
 
                     </div>
 
-                        {% if times %}
-                            <div class="col-6 text-center">
-                                {{ form_row(form.Heure) }}
-                            </div>
-                            <div class="btn-rez-countainer">
-                                {% if notification %}
+                    {% if times %}
+                        <div class="col-lg-6">
+                            {{ form_row(form.Heure) }}
+                        </div>
+                        <div class="btn-rez-countainer">
+                            {{ form_widget(form.submit, {'attr': {'class': 'btn btn-outline-success btn-rez text-center'}}) }}
+                        </div>
+                        {% if notification %}
+                            <button class="btn btn-outline-dark btn-phone">Retourner sur la Page d'acceuil</button>
 
-                                        <a href="{{ path('app_home') }}" role="button" class="btn btn-outline-dark mr-5 btn-rez">
-                                            Retourner à la page d'acceuil
-                                        </a>
-
-                                {% endif %}
-
-                                {{ form_widget(form.submit, {'attr': {'class': 'btn btn-outline-success btn-rez text-center'}}) }}
-                            </div>
-                        {% else %}
-                            <div class="col-6">
-                            <p>Pas de créneaux disponible</p>
-                            </div>
                         {% endif %}
 
+                    {% else %}
+                        <div class="col-lg-6">
+                            <p>Pas de créneaux disponible</p>
+                        </div>
+                    {% endif %}
                     {{ form_end(form) }}
                 </div>
             </div>
