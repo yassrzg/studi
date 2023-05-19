@@ -48,19 +48,20 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('StudiEcf');
+            ->setTitle('Quai Antique');
     }
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('Client', 'fas fa-user', User::class);
-        yield MenuItem::linkToCrud('Categorie', 'fas fa-list', Categorie::class);
+        yield MenuItem::linkToDashboard('Acceuil', 'fa fa-home');
+        yield MenuItem::linkToCrud('Clients', 'fas fa-user', User::class);
+        yield MenuItem::linkToCrud('Catégories', 'fas fa-list', Categorie::class);
         yield MenuItem::linkToCrud('La Carte', 'fa-solid fa-utensils', NosProduits::class);
-        yield MenuItem::linkToCrud('Reservation', 'fa fa-book', Reservation::class);
-        yield MenuItem::linkToCrud("Liste d'allergie", 'fa fa-hand-dots', Allergie::class);
+        yield MenuItem::linkToCrud('Formules', 'fas fa-star', Menu::class);
+        yield MenuItem::linkToCrud('Réservations', 'fa fa-book', Reservation::class);
+        yield MenuItem::linkToCrud("Liste d'allergies", 'fa fa-hand-dots', Allergie::class);
         yield MenuItem::linkToCrud('Place Disponible', 'fa fa-chair', Creneaux::class);
-        yield MenuItem::linkToCrud('Donnée Restaurant', 'fa fa-database', RestaurantHours::class);
-        yield MenuItem::linkToCrud('Formule', 'fas fa-list', Menu::class);
+        yield MenuItem::linkToCrud('Données Restaurant', 'fa fa-database', RestaurantHours::class);
+
     }
 }

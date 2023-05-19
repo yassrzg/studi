@@ -52,6 +52,7 @@ class RegisterController extends AbstractController
                 $allergiesString = implode(',', $allergiesArray); // convert array to string
                 $user->setAllergie($allergiesString);
                 $user->setPassword($password);
+                $user->setRoles(['ROLE_USER']);
 
                 $this->entityManager->persist($user);
                 $this->entityManager->flush();
@@ -62,7 +63,11 @@ class RegisterController extends AbstractController
                 $name_content = $user->getFirstname();
                 $email->send($user->getEmail(), $user->getFirstname(), $subject, $content, $name_content );
 
+
                 $notification= 'Inscription réussi';
+
+                return $this->redirectToRoute('app_account');
+
             } else {
                 $notification= 'Email existe déja';
             }

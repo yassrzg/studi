@@ -1,10 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AccountController!{% endblock %}
+{% block title %}Mon Compte{% endblock %}
 
 {% block content %}
     <div>
         <h2>Bienvenue {{ app.user.firstname }} !</h2>
+
+        {% if is_granted('ROLE_ADMIN') %}
+            <div class="mt-5">
+                <a href="/admin" role="button" class="mt-3 btn btn-outline-dark">Accédez à la page Admin</a>
+            </div>
+        {% endif %}
         <div class="mt-5 ">
             <a href="{{ path('app_account_setting') }}" role="button" class="mt-3 btn btn-outline-primary">Changer mon mot de passe</a>
         </div>
