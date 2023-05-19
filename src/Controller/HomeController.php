@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 
+use App\Entity\Caroussel;
 use App\Entity\Menu;
 use App\Entity\NosProduits;
 use App\Repository\NosProduitsRepository;
@@ -29,13 +30,16 @@ class HomeController extends AbstractController
 
         $menu = $this->entityManager->getRepository(Menu::class)->findAll();
 
+        $caroussel = $this->entityManager->getRepository(Caroussel::class)->findAll();
+
 
 
 
         return $this->render('home/index.html.twig', [
             'bestMenu' => $bestMenu,
             'form_hours' => $form_hours,
-            'menu' => $menu
+            'menu' => $menu,
+            'caroussel' => $caroussel
         ]);
     }
 

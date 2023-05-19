@@ -6,8 +6,13 @@
 
 
 
-    <div class="mt-5">
-        <h1 class="title-page">Nos Produits</h1>
+    <div>
+        <div id="menu-title-container">
+            <h1 class="text-center text-white mb-5">Nos Menus</h1>
+            <p>
+                "Plongez dans une expérience gastronomique d'exception avec nos menus élégamment conçus,<br/> où chaque plat est une harmonie savoureuse qui révélera les délices de notre savoir faire."
+            </p>
+        </div>
 
         {% for cat in categories %}
 
@@ -17,10 +22,10 @@
                 <h2 class="title-produit text-center mb-5">{{  cat.name }}</h2>
                 {% set foo = cat.nosProduits %}
 
-                <div class="row g-3">
+                <div class="row g-2">
                     {% for bar in foo %}
-                        <div class="col-lg-4">
-                            <div class="card card-produit">
+                        <div class="col-lg-6">
+                            <div class="d-flex card-produit">
                                 {% if bar.illustration %}
                                 <div id="img" class="img-produit">
                                     <img src="/Uploads/{{ bar.illustration }}" alt="{{ bar.name }}" class="img-fluid">

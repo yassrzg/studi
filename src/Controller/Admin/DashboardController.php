@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Allergie;
+use App\Entity\Caroussel;
 use App\Entity\Categorie;
 use App\Entity\Creneaux;
 use App\Entity\Menu;
@@ -62,6 +63,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud("Liste d'allergies", 'fa fa-hand-dots', Allergie::class);
         yield MenuItem::linkToCrud('Place Disponible', 'fa fa-chair', Creneaux::class);
         yield MenuItem::linkToCrud('Données Restaurant', 'fa fa-database', RestaurantHours::class);
+        yield MenuItem::linkToCrud('Caroussel', 'fa fa-desktop' ,Caroussel::class);
 
     }
 }

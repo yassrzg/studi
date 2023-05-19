@@ -48,13 +48,13 @@
     </nav>
 </header>
 
-<main role="main" class="margin-top">
+<main role="main">
 
   <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
-    <div class="container marketing">
+    <div>
         {% block content %}
 
         {% endblock %}
@@ -64,6 +64,16 @@
 
     <!-- FOOTER -->
     <footer class="container">
+        <ul>
+            <li>Contact</li>
+            <li>A propos</li>
+            <li>(CGU) Condition d'utilisation</li>
+        </ul>
+        <ul>
+            <li><img src="{{ asset('imgTest/icons8-facebook.svg') }}" style="width: 30px"></li>
+            <li><img src="{{ asset('imgTest/icons8-instagram.svg') }}"style="width: 30px"></li>
+            <li><img src="{{ asset('imgTest/icons8-twitter.svg') }}"style="width: 30px"></li>
+        </ul>
 
     </footer>
 </main>
