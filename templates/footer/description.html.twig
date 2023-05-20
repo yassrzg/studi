@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block content %}
+    <div class="container marketing cgu">
+        <h1 class="text-center mb-5 apropos">à propos</h1>
+        {% for description in description %}
+            <div>
+                <p class="cgu-text">{{ description.Description|nl2br }}</p>
+                {% if description.descriptionImage %}
+                    <div class="img-container-description">
+                        <img src="/Uploads/{{ description.descriptionImage }}" class="img-description"/>
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
