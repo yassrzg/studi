@@ -6,6 +6,7 @@ use App\Entity\Allergie;
 use App\Entity\Caroussel;
 use App\Entity\Categorie;
 use App\Entity\Creneaux;
+use App\Entity\Footer;
 use App\Entity\Menu;
 use App\Entity\NosProduits;
 use App\Entity\Reservation;
@@ -59,11 +60,12 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Catégories', 'fas fa-list', Categorie::class);
         yield MenuItem::linkToCrud('La Carte', 'fa-solid fa-utensils', NosProduits::class);
         yield MenuItem::linkToCrud('Formules', 'fas fa-star', Menu::class);
-        yield MenuItem::linkToCrud('Réservations', 'fa fa-book', Reservation::class);
+        yield MenuItem::linkToCrud('Réservations', 'fa fa-calendar', Reservation::class);
         yield MenuItem::linkToCrud("Liste d'allergies", 'fa fa-hand-dots', Allergie::class);
         yield MenuItem::linkToCrud('Place Disponible', 'fa fa-chair', Creneaux::class);
         yield MenuItem::linkToCrud('Données Restaurant', 'fa fa-database', RestaurantHours::class);
         yield MenuItem::linkToCrud('Caroussel', 'fa fa-desktop' ,Caroussel::class);
+        yield MenuItem::linkToCrud('Footer', 'fa fa-book' ,Footer::class);
 
     }
 }

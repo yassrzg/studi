@@ -1,6 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Modif Password{% endblock %}
 
 {% block content %}
     <div>
@@ -8,8 +7,7 @@
             <div class="alert alert-info">{{ notification }}</div>
             <hr>
         {% endif %}
-        <h1>Modifier mon mot de passe</h1>
-        <h2>Bienvenue {{ app.user.firstname }} !</h2>
+        <h2 class="mleft mt-5">Bienvenue {{ app.user.firstname }} !</h2>
         <div class="mt-5">
             <hr>
             <div id="form">

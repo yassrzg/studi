@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -45,6 +46,10 @@ class ReservationType extends AbstractType
                     '4 couverts' => 4,
                     '5 couverts' => 5,
                     '6 couverts' => 6,
+                    '7 couverts' => 7,
+                    '8 couverts' => 8,
+                    '9 couverts' => 9,
+                    '10 couverts' => 10,
                 ],
                 'required' => true,
                 'label' => 'Nombre de couverts',
@@ -63,6 +68,9 @@ class ReservationType extends AbstractType
                 'attr' => [
                     'class' => 'form-check',
                 ]
+            ])
+            ->add('Note', TextareaType::class, [
+                'label' => 'Avez-vous un message à nous transmettre ?'
             ])
 
         ;

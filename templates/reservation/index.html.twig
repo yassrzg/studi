@@ -1,69 +1,65 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ReservationController!{% endblock %}
 
 {% block content %}
-        {% if notification %}
-            <div class="alert alert-success">{{ notification }}</div>
-            <hr>
-        {% endif %}
+
         {% if notificationEchec %}
             <div class="alert alert-danger">{{ notificationEchec }}</div>
             <hr>
         {% endif %}
         {% if app.user %}
+            <div class="form-content-reservation">
 
-            <div class="form-reservation-content">
-                <h2 class="mb-5 text-center">Formulaire de Réservation</h2>
-                    {{ form_start(form) }}
-                <div class="row g-2">
-                    <div class="col-lg-6">
-                        {{ form_row(form.date) }}
-                    </div>
-                    <div class="col-lg-6">
-                        {{ form_row(form.couverts) }}
-                    </div>
-                    <div class="col-lg-6">
-                        {{ form_row(form.name, {'value': app.user.firstname, 'attr': {'readonly': true}}) }}
-                    </div>
-                    <div class="col-lg-6">
-                        {{ form_row(form.lastname, {'value': app.user.lastname, 'attr': {'readonly': true}}) }}
-                    </div>
-                    <div class="col-lg-12">
-                        {{ form_row(form.email, {'value': app.user.email, 'attr': {'readonly': true}}) }}
-                    </div>
+                <div class="form-reservation-content">
+                    <h2 class="mb-5 text-center">Formulaire de Réservation</h2>
+                        {{ form_start(form) }}
+                    <div class="row g-2">
+                        <div class="col-lg-6">
+                            {{ form_row(form.date) }}
+                        </div>
+                        <div class="col-lg-6">
+                            {{ form_row(form.couverts) }}
+                        </div>
+                        <div class="col-lg-6">
+                            {{ form_row(form.name, {'value': app.user.firstname, 'attr': {'readonly': true}}) }}
+                        </div>
+                        <div class="col-lg-6">
+                            {{ form_row(form.lastname, {'value': app.user.lastname, 'attr': {'readonly': true}}) }}
+                        </div>
+                        <div class="col-lg-12">
+                            {{ form_row(form.email, {'value': app.user.email, 'attr': {'readonly': true}}) }}
+                        </div>
+                        <div class="col-lg-12">
+                            {{ form_row(form.Note) }}
+                        </div>
 
-                    <div class="col-lg-6">
-                        {{ form_row(form.allergie) }}
-                    </div>
-                        {{ form_row(form._token) }}
+                        <div class="col-lg-6">
+                            {{ form_row(form.allergie) }}
+                        </div>
+                            {{ form_row(form._token) }}
 
-                        {% if times %}
-                            <div class="col-lg-6">
-                            {{ form_row(form.Heure) }}
-                            </div>
-                            <div class="btn-rez-countainer">
-                            {{ form_widget(form.submit, {'attr': {'class': 'btn btn-outline-success btn-rez text-center'}}) }}
-                            </div>
-                            {% if notification %}
-                                <button class="btn btn-outline-dark btn-phone">Retourner sur la Page d'acceuil</button>
-
+                            {% if times %}
+                                <div class="col-lg-6">
+                                {{ form_row(form.Heure) }}
+                                </div>
+                                <div class="btn-rez-countainer">
+                                {{ form_widget(form.submit, {'attr': {'class': 'btn btn-outline-success btn-rez text-center'}}) }}
+                                </div>
+                            {% else %}
+                                <div class="col-lg-6">
+                                    <p>Pas de créneaux disponible</p>
+                                </div>
                             {% endif %}
 
-                        {% else %}
-                            <div class="col-lg-6">
-                                <p>Pas de créneaux disponible</p>
-                            </div>
-                        {% endif %}
-
-                    {{ form_end(form) }}
+                        {{ form_end(form) }}
+                    </div>
                 </div>
             </div>
 
 
 
         {% else %}
-
+        <div class="form-content-reservation">
             <div class="form-reservation-content">
                 <h2 class="mb-5 text-center">Formulaire de Réservation</h2>
                 {{ form_start(form) }}
@@ -83,6 +79,9 @@
                     <div class="col-lg-12">
                     {{ form_row(form.email) }}
                     </div>
+                    <div class="col-lg-12">
+                        {{ form_row(form.Note) }}
+                    </div>
 
 
                     <div class="col-lg-6 text-center">
@@ -97,11 +96,6 @@
                         <div class="btn-rez-countainer">
                             {{ form_widget(form.submit, {'attr': {'class': 'btn btn-outline-success btn-rez text-center'}}) }}
                         </div>
-                        {% if notification %}
-                            <button class="btn btn-outline-dark btn-phone">Retourner sur la Page d'acceuil</button>
-
-                        {% endif %}
-
                     {% else %}
                         <div class="col-lg-6">
                             <p>Pas de créneaux disponible</p>
@@ -110,6 +104,7 @@
                     {{ form_end(form) }}
                 </div>
             </div>
+        </div>
         {% endif %}
 
 

@@ -3,7 +3,7 @@
 {% block title %}Mon Compte{% endblock %}
 
 {% block content %}
-    <div>
+    <div class="mleft mt-5">
         <h2>Bienvenue {{ app.user.firstname }} !</h2>
 
         {% if is_granted('ROLE_ADMIN') %}

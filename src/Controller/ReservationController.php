@@ -37,7 +37,6 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
     #[Route('/reservations/{dateReservation<\d{4}-\d{2}-\d{2}>?}', name: 'app_reservation')]
     public function index(EntityManagerInterface $entityManager, Request $request, RestaurantHoursRepository $restaurantHoursRepository, CreneauxRepository $creneauxRepository , UrlGeneratorInterface $urlGenerator,$dateReservation): Response
     {
-        $notification = null;
         $notificationEchec = null;
 
 
@@ -205,11 +204,11 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
                                     }
                                     $allergiesStr = rtrim($allergiesMailStr, ', ');
                                 }
-                            $content = 'Récapitulatif de la réservation <br/><br/><br/><br/> Date : ' . $date->format('Y-m-d') . '<br/><br/> Heure : ' . $time->format('H:i') . ' <br/><br/> Pour un nombre de ' . $covers.' personnes' . '<br/> <br/> Vous avez déclaré ces allergies : <br/><br/>' . $allergiesStr. '<br/><br/> Veuillez appeler le Restaurant pour annuler votre réservation';
+                            $content = 'Récapitulatif de la réservation <br/><br/><br/><br/> Date : ' . $date->format('Y-m-d') . '<br/><br/> Heure : ' . $time->format('H:i') . ' <br/><br/> Pour un nombre de ' . $covers.' personnes' . '<br/> <br/> Vous avez déclaré ces allergies : <br/><br/>' . $allergiesStr. '<br/><br/> Si vous souhaitez annuler votre réservation,<br/> merci de bien vouloir contacter le restaurant au 0606060606';
 
                             $name_content = $reservation->getName();
                             $email->send($reservation->getEmail(), $reservation->getName(), $subject, $content, $name_content );
-                            $notification= 'Réservation Réussi ! Nous vous avons envoyé un mail !';
+                        return $this->redirectToRoute('app_reservation_confirmation');
                         } else {
 
                         $notificationEchec= 'Créneaux Horaire Indisponible ! Essayez un nouveau créneau !';
@@ -278,11 +277,12 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
                         }
                         $allergiesStr = rtrim($allergiesMailStr, ', ');
                     }
-                    $content = 'Récapitulatif de la réservation <br/><br/><br/><br/> Date : ' . $date->format('Y-m-d') . '<br/><br/> Heure : ' . $time->format('H:i') . ' <br/><br/> Pour un nombre de ' . $covers.' personnes' . '<br/> <br/> Vous avez déclaré ces allergies : <br/><br/>' . $allergiesStr. '<br/><br/> Veuillez appeler le Restaurant pour annuler votre réservation';
+                    $content = 'Récapitulatif de la réservation <br/><br/><br/><br/> Date : ' . $date->format('Y-m-d') . '<br/><br/> Heure : ' . $time->format('H:i') . ' <br/><br/> Pour un nombre de ' . $covers.' personnes' . '<br/> <br/> Vous avez déclaré ces allergies : <br/><br/>' . $allergiesStr. '<br/><br/> Si vous souhaitez annuler votre réservation,<br/> merci de bien vouloir contacter le restaurant au 0606060606';
 
                     $name_content = $reservation->getName();
                     $email->send($reservation->getEmail(), $reservation->getName(), $subject, $content, $name_content );
-                    $notification= 'Réservation Réussi ! Nous vous avons envoyé un mail !';
+
+                    return $this->redirectToRoute('app_reservation_confirmation');
 
                 }
 
@@ -292,11 +292,20 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
         return $this->render('reservation/index.html.twig', [
             'form' => $form->createView(),
             'times' => $times,
-            'notification' => $notification,
             'notificationEchec' => $notificationEchec,
-
         ]);
     }
+
+    #[Route('/reservations/confirmation', name: 'app_reservation_confirmation')]
+    public function confirmation(Request $request): Response
+    {
+
+        $notification = 'Réservation Réussi ! Nous vous avons envoyé un mail !';
+        return $this->render('reservation/reservation.html.twig', [
+            'notification' => $notification
+        ]);
+    }
+
 
 
 }

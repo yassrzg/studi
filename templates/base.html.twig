@@ -54,7 +54,7 @@
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
-    <div>
+    <div class="mbottom">
         {% block content %}
 
         {% endblock %}
@@ -63,17 +63,19 @@
     </div><!-- /.container -->
 
     <!-- FOOTER -->
-    <footer class="container">
-        <ul>
-            <li>Contact</li>
-            <li>A propos</li>
-            <li>(CGU) Condition d'utilisation</li>
-        </ul>
-        <ul>
-            <li><img src="{{ asset('imgTest/icons8-facebook.svg') }}" style="width: 30px"></li>
-            <li><img src="{{ asset('imgTest/icons8-instagram.svg') }}"style="width: 30px"></li>
-            <li><img src="{{ asset('imgTest/icons8-twitter.svg') }}"style="width: 30px"></li>
-        </ul>
+    <footer>
+        <div class="footer-container">
+            <ul class="ul-container">
+                <li><a href="">Contact</a></li>
+                <li><a href="{{ path('app_propos') }}">A propos</a> </li>
+                <li><a href="{{ path('app_cgu') }}">(CGU) Condition d'utilisation</a></li>
+            </ul>
+            <ul>
+                <li><a href="#"><img src="{{ asset('imgTest/icons8-facebook.svg') }}" style="width: 30px"></a></li>
+                <li><a href="#"><img src="{{ asset('imgTest/icons8-instagram.svg') }}"style="width: 30px"></a></li>
+                <li><a href="#"><img src="{{ asset('imgTest/icons8-twitter.svg') }}"style="width: 30px"></a></li>
+            </ul>
+        </div>
 
     </footer>
 </main>

@@ -52,6 +52,9 @@ class Reservation
     #[ORM\Column(length: 255)]
     private ?string $lastname = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $Note = null;
+
 
 
 
@@ -252,6 +255,18 @@ class Reservation
     public function setLastname(string $lastname): self
     {
         $this->lastname = $lastname;
+
+        return $this;
+    }
+
+    public function getNote(): ?string
+    {
+        return $this->Note;
+    }
+
+    public function setNote(?string $Note): self
+    {
+        $this->Note = $Note;
 
         return $this;
     }

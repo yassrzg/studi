@@ -17,7 +17,7 @@ class HoursRestaurantController extends AbstractController
     {
 
         $form_hours= $restaurantHoursRepository->findAllByDay();
-        return $this->render('hours_restaurant/index.html.twig', [
+        return $this->render('hours_restaurant/description.html.twig', [
             'form_hours' => $form_hours,
         ]);
     }

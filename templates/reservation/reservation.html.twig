@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+
+    <div class="alert alert-success" id="notification">{{ notification }}</div>
+    <div class="mt-5 container marketing">
+        <div class="mb-5 reservation-confirmation">
+            <h2>Votre réservation a été confirmé</h2>
+            <img src="{{ asset('imgTest/icons8-ok-240.svg') }}" class="mt-5"/>
+            <p class="mt-5">Nous vous avons envoyé un mail avec toutes les informations de votre réservation</p>
+            <a href="{{ path('app_home') }}" role="button" class="btn btn-outline-success mt-2" id="btn-back-home">Retourner à la page d'acceuil</a>
+    </div>
+
+    {% block javascripts %}
+        <script>
+            let notif = document.querySelector('#notification');
+            let btn = document.querySelector('#btn-back-home');
+
+            // Définir une fonction pour masquer l'alerte après 5 secondes
+            function masquerAlerte() {
+                notif.style.display = 'none';
+                btn.style.display ='block';
+            }
+
+            // Utiliser setTimeout pour appeler la fonction après 5 secondes
+            setTimeout(masquerAlerte, 5000);
+
+
+        </script>
+
+    {% endblock %}
+
+{% endblock %}
