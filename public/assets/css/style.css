@@ -223,7 +223,7 @@ a {
 .btn-voir-menu {
     background-color: #906427;
     color: white;
-    padding: 1rem 1.5rem;
+    padding: 0.5rem 1.5rem;
     border-radius: 1rem;
     border: none;
     position: absolute;
@@ -247,7 +247,7 @@ a {
 .btn-reservation {
     background-color: #906427;
     color: white;
-    padding: 1rem 1.5rem;
+    padding: 0.5rem 1.5rem;
     border-radius: 1rem;
     border: none;
     position: absolute;
@@ -838,6 +838,46 @@ a {
     margin-left: 1rem;
 
 }
+.card-body {
+    width: 60%;
+}
+
+.p-description{
+    height: 7.5rem;
+    overflow: hidden;
+}
+
+
+.clamped-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.clamped-text2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.clamped-text3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.clamped-text1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.clamped-text5 {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 
 
 /* LOGO */
@@ -1062,4 +1102,24 @@ footer img {
         margin: auto;
         margin-top: 1rem;
     }
+
+    .clamped-text3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    element.style {
+    }
+    @media (max-width: 767px)
+    div.card-produit div.card-body p {
+        font-size: 0.8rem;
+    }
+        .clamped-text5 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
 }

@@ -37,13 +37,13 @@
                 <div class="col-lg-12">
                     <div class="card-produit-home d-flex">
                         {% if bestMenu.illustration %}
-                        <div id="img" class="img-produit">
-                            <img src="/Uploads/{{ bestMenu.illustration }}" alt="{{ bestMenu.name }}" class="card-img-top" id="img-best">
-                        </div>
+                            <div id="img" class="img-produit">
+                                <img src="/Uploads/{{ bestMenu.illustration }}" alt="{{ bestMenu.name }}" class="card-img-top" id="img-best">
+                            </div>
                         {% endif %}
                         <div class="card-produit-content">
-                            <h3 class="text-center mb-2">{{ bestMenu.name }}</h3>
-                            <p>{{ bestMenu.description }}</p>
+                            <h3 class="text-center mb-2 clamped-text1">{{ bestMenu.name }}</h3>
+                            <p class="clamped-text3">{{ bestMenu.description }}</p>
                             <h3 id="title-img" class="title-img mt-2">{{ bestMenu.titreIllustration }}</h3>
                             <p>{{ (bestMenu.price/100)|number_format(2, ',', '.') }} €</p>
                             <div class="text-center mt-5">
@@ -111,8 +111,8 @@
                         {% for produit in foo %}
                             <div class="col">
                                 <h6 class="mb-5">{{ produit.category }}</h6>
-                               <h4 class="text-center mb-4">{{ produit.name }}</h4>
-                               <p>{{ produit.description }}</p>
+                               <h4 class="text-center mb-4 clamped-text2">{{ produit.name }}</h4>
+                               <p class="clamped-text">{{ produit.description }}</p>
                                <p><span>{{ (produit.price / 100)|number_format(2, ',', '.')}} €</span></p>
                            </div>
                         {% endfor %}
