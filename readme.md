@@ -35,9 +35,29 @@ se rendre sur github : https://github.com/yassrzg/studi.git
 
 git clone https://github.com/yassrzg/studi.git
 
+#LOCAL
+
+Soyer connecté à internet pour que l'API d'envoie de mail fonctionne.
+
+
 #BASE DE DONNÉE 
 
 J'ai exporté pour vous ma bdd avec la quel j'ai mis en ligne le site si vous souhaitez l'utiliser.
+vous la trouverait dans export.sql : 
+Pour l'utiliser il vous faut crée une Base de donnée ;
+
+mysql -u username -p database_name < export.sql
+
+Exécuter cela à la racine de votre projet , et remplacer username par le nom de votre base de donner et databasename par le nom de votre database
+
+Ou bien vous pouvez utiliser la migration qui est un fichier qui se trouve dans le dossier évaluation studi ecf envoyé.
+Puis ensuite l'importer et exécuter les fixtures  avec la commande suivante : 
+
+php bin/console doctrine:fixtures:load
+
+Liens du site : 
+
+
 
 
 
