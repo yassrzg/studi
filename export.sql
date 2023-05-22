@@ -114,7 +114,6 @@ CREATE TABLE `creneaux` (
 
 LOCK TABLES `creneaux` WRITE;
 /*!40000 ALTER TABLE `creneaux` DISABLE KEYS */;
-INSERT INTO `creneaux` VALUES (92,NULL,'2023-05-29 20:30:00',4,16),(93,NULL,'2023-06-17 22:00:00',1,18),(94,NULL,'2023-05-15 20:00:00',4,16),(95,NULL,'2023-05-15 12:00:00',5,0),(96,NULL,'2023-05-18 11:00:00',3,10),(97,NULL,'2023-05-18 19:00:00',1,20),(98,NULL,'2023-05-19 12:00:00',2,14),(99,NULL,'2023-05-19 14:00:00',1,13),(100,NULL,'2023-05-19 19:20:00',1,15),(101,NULL,'2023-05-19 22:00:00',1,16),(102,NULL,'2023-05-19 13:20:00',1,11),(103,NULL,'2023-05-20 22:00:00',3,17),(104,NULL,'2023-05-20 19:00:00',1,18),(105,NULL,'2023-05-25 11:30:00',2,21),(106,NULL,'2023-05-21 12:00:00',1,17);
 /*!40000 ALTER TABLE `creneaux` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -190,7 +189,7 @@ CREATE TABLE `menu` (
 
 LOCK TABLES `menu` WRITE;
 /*!40000 ALTER TABLE `menu` DISABLE KEYS */;
-INSERT INTO `menu` VALUES (3,'yassine'),(4,'yass');
+INSERT INTO `menu` VALUES (3,'Menu Découverte\"'),(4,'Menu Terroi');
 /*!40000 ALTER TABLE `menu` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -248,7 +247,7 @@ CREATE TABLE `nos_produits` (
   KEY `IDX_1200AB5ECCD7E912` (`menu_id`),
   CONSTRAINT `FK_1200AB5E12469DE2` FOREIGN KEY (`category_id`) REFERENCES `categorie` (`id`),
   CONSTRAINT `FK_1200AB5ECCD7E912` FOREIGN KEY (`menu_id`) REFERENCES `menu` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -257,7 +256,7 @@ CREATE TABLE `nos_produits` (
 
 LOCK TABLES `nos_produits` WRITE;
 /*!40000 ALTER TABLE `nos_produits` DISABLE KEYS */;
-INSERT INTO `nos_produits` VALUES (1,3,'sandwitch saumon','87e3d7f513250bd8848f087ff488aade0efa331b. png','sandwitch saumon','notre meilleur sandwitch au saumon',1400,'photo sandwitch',0,3),(2,1,'sandwitch loulou','12de6c9a824897466e17a2bd95f94d3ae115bdae. png','sandwitch loulou','sandwitch loulou',1000,'sandwitch loulou',0,3),(3,2,'sandwitch loulou2','224307accad463d714198cadb5283aa1bba171d7. jpg','sandwitch loulou2','sandwitch loulou2',1000,'sandwitch loulou2',0,3),(4,1,'sandwitch loulou32','bee2de9a5568f11462c8cf4c5ac825119c0aaa50. jpg','sandwitch loulou322','sandwitch loulou32222',1500,'sandwitch loulou32',0,4),(5,1,'sandwitch loulou84','a3d360a129baf57f96495f54e7a017b2e6623d6c. jpg','sandwitch loulou84','sandwitch loulou844444',800,'sandwitch loulou4',0,4),(6,3,'sandwitch 84','a2b57203e1301f8ff9750f111cd5afd9829a0840. jpg','sandwitch84','sandwitch84',1000,'sandwitch84',1,4),(7,3,'plat principal','d042391bf7bf4965a466380de41c33407eaa36d1. png','plat principal','plat principal',1500,'plat principal',0,3),(8,3,'plat principal','2674e6eb5bc1d389f5060c37449bdfa7c89b9101. jpg','plat principal','plat principal',2000,'plat principal',0,NULL),(11,4,'powerade','69640e3e87f306d2db10debfd2ca39b702bab327. jpg','powerade','powerade',1000,'powerade',0,NULL);
+INSERT INTO `nos_produits` VALUES (1,2,'Saveurs de la mer','6233e3e3e614272993c2bb9a238fd9aae6b92c97. avif','Dégustation de fruits de mer frais','Plongez dans l\'océan avec notre délicieux menu de fruits de mer frais, sélectionnés avec soin pour vous offrir une expérience culinaire inoubliable. Profitez d\'une variété de saveurs marines, des huîtres charnues aux crevettes juteuses, en passant par les moules savoureuses. Accompagné d\'une sélection de sauces artisanales et d\'une présentation élégante, ce menu est un véritable régal pour les amateurs de fruits de mer.',4500,'Saveurs de la mer',0,3),(2,1,'Carpaccio de Saint-Jacques','60918609b1a6428e120a02f3df55d851933831ce. jpg','Carpaccio de Saint-Jacques','Un mélange subtil de fines tranches de Saint-Jacques fraîches, délicatement marinées dans une vinaigrette citronnée, accompagnées de jeunes pousses croquantes et de copeaux de parmesan. Une entrée raffinée qui allie fraîcheur et saveurs marines, parfaite pour commencer votre expérience gastronomique.',1800,'Carpaccio de Saint-Jacques',0,3),(3,2,'Senteurs de la campagne','bf4ea5b47d4297a11963ef0808360768808296da. jpg','Exploration des saveurs locales','Plongez dans les délices de notre menu mettant à l\'honneur les produits frais et locaux de la campagne environnante. Dégustez des plats préparés avec passion, mettant en valeur les légumes de saison, les herbes aromatiques fraîches et les viandes sélectionnées avec soin. Chaque bouchée vous transportera au cœur des saveurs de la campagne, dans une expérience gustative unique.',5500,'Senteurs de la campagne',1,4),(5,1,'Foie gras poêlé aux figues','ee89c621690abd3478901af2df9ab029bae51594. jpg','Foie gras poêlé aux figues','Une tranche généreuse de foie gras poêlé, dorée à la perfection, associée à des figues rôties et caramélisées. Le mariage de la texture fondante du foie gras et de la douceur des figues offre une symphonie de saveurs sucrées et salées qui raviront vos papilles dès la première bouchée.',2200,'Foie gras poêlé aux figues',1,4),(6,3,'Fondant au chocolat et sa crème anglaise à la vanille','a0e9553e648f58dc3b92c95f7c47a666ddb2190a. jpg','Fondant au chocolat et sa crème anglaise à la vanille','Découvrez notre fondant au chocolat divinement fondant, accompagné d\'une onctueuse crème anglaise à la vanille. Chaque bouchée de ce dessert vous transportera dans un monde de gourmandise, où le mariage intense du chocolat noir et la douceur de la crème anglaise créent une harmonie parfaite pour terminer votre repas en beauté.',1000,'Fondant au chocolat et sa crème anglaise à la vanille',1,4),(8,3,'artelette aux fruits rouges et sa chantilly maison','fd7d32f063c0c8e196542b4a3e03c8934dac9607. jpg','artelette aux fruits rouges et sa chantilly maison','Laissez-vous séduire par notre tartelette aux fruits rouges fraîchement cueillis, délicatement disposés sur une fine couche de crème pâtissière. Le tout est couronné d\'une généreuse portion de chantilly maison légère et aérienne. Chaque bouchée de cette création fruitée et gourmande vous offrira une explosion de saveurs et une note sucrée acidulée.',1200,'artelette aux fruits rouges et sa chantilly maison',0,3),(11,4,'Vin blanc local - Apremont','1dd72c201a79a3d402e27d21e27e97c6f8f8da62. jpg','Vin blanc local - Apremont','Dégustez un verre de vin blanc local Apremont, produit dans les vignobles de Chambéry. Ce vin sec et élégant offre des arômes délicats d\'agrumes et de fleurs blanches, parfaitement équilibrés avec une belle fraîcheur. Son caractère minéral s\'accorde parfaitement avec les plats fins et les saveurs délicates de la cuisine gastronomique.',3500,'Vin blanc local - Apremont',0,4),(13,4,'Cocktail signature - Chambéry Spritz','da9619eeb2d5bea853d30be30777b61449ae4101. png','Cocktail signature - Chambéry Spritz','Laissez-vous séduire par notre cocktail signature, le Chambéry Spritz. Un mélange rafraîchissant de vermouth de Chambéry, d\'eau pétillante, de sirop d\'orange et de quelques gouttes d\'amers, garni d\'une tranche d\'orange fraîche. Ce cocktail pétillant et équilibré éveillera vos papilles et vous offrira une expérience gustative unique.',2800,'Cocktail signature - Chambéry Spritz',0,3);
 /*!40000 ALTER TABLE `nos_produits` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -291,7 +290,6 @@ CREATE TABLE `reservation` (
 
 LOCK TABLES `reservation` WRITE;
 /*!40000 ALTER TABLE `reservation` DISABLE KEYS */;
-INSERT INTO `reservation` VALUES (206,'studiECF','studiECF@test.com','2023-05-20',1,'19:00:00','',NULL,'studiECF','yessss'),(207,'yass','leila.chouali.arc@gmail.com','2023-05-25',2,'11:30:00','noisette,lait,chocolat',NULL,'rzg','euhhh jsp'),(208,'yass','yass14@gmail.com','2023-05-21',1,'12:00:00','lait,chocolat',NULL,'rzg','ngfjh'),(209,'yassine','rezgui@gmail.com','2023-05-21',1,'12:00:00','noisette',NULL,'rzg',NULL),(210,'studiECF','studiECF@test.com','2023-05-19',1,'12:00:00','',NULL,'studiECF',NULL);
 /*!40000 ALTER TABLE `reservation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -319,7 +317,6 @@ CREATE TABLE `reset_password` (
 
 LOCK TABLES `reset_password` WRITE;
 /*!40000 ALTER TABLE `reset_password` DISABLE KEYS */;
-INSERT INTO `reset_password` VALUES (1,18,'646233123685f','2023-05-15 13:26:42'),(2,18,'64623344df3af','2023-05-15 13:27:32'),(3,18,'646233c1347d4','2023-05-15 13:29:37'),(4,18,'646233c35dc7d','2023-05-15 13:29:39'),(5,18,'6462349270a35','2023-05-15 13:33:06'),(6,18,'646237ce534db','2023-05-15 13:46:54'),(7,18,'64623c2cd570a','2023-05-15 14:05:32'),(8,18,'646240953aea1','2023-05-15 14:24:21'),(9,18,'64633659d81d8','2023-05-16 07:52:57');
 /*!40000 ALTER TABLE `reset_password` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -379,7 +376,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (13,'test@gmail.com','[]','$2y$13$nVhsLpTB30sz6tHdpI4f..UKZVujJUXle3YmFkjjpabwR0mxMb13C','yassine','rezgui','noisette,lait,chocolat'),(15,'test1@gmail.com','[]','$2y$13$sf4jN1ZlSG.18Wq1j7wj0.aqdbNATx//bSDKybDFJlC4RH0oUYl9y','yassine','rezgui','noisette,lait,chocolat'),(16,'test123@gmail.com','[]','$2y$13$ABRkUR5YaJZ/Y7Dhz41JpepX8Du59RNY5hvUGns/F6EIZsGhzMsZi','yassine','yass',''),(17,'leilassine@gmail.com','[]','$2y$13$Un7Xd2tVzOias0AEbaAom.nO.3t8hmZ2OLsBoYbN6KhjcGwk10hL6','yass','rzg','noisette,lait'),(18,'yass.srgrzg@gmail.com','[]','$2y$13$n7Gj1gXhnz2nSRhOiZ2/menODy44hC0D25mJ0h5ZADVDUzVdusq0m','yas122','rzg','noisette,lait,chocolat'),(19,'fbenital@gmail.com','[]','$2y$13$6xKgV1hd9Om3cKjqVldLQeNnwiWQurLT/5kUKfqkksyuGbesUNks.','Benoit','FERREIRA-SANTOS','lait,chocolat'),(20,'studiECF@test.com','[\"ROLE_ADMIN\"]','$2y$13$6aRW155U6cjI6HAfi3BJ5eFRcbS9pJt6Qj6pCq5yAKv9HUDmAPDiG','studiECF','studiECF',''),(21,'test1458@gmail.com','[]','$2y$13$NkJyC//fFtZ2Fk5ZbY.lhuaiS5ZbY5.C/nRHHrvTUyM2WEZ.UMJju','yassine','rezgui',''),(22,'test145788@gmail.com','[]','$2y$13$xZ9OnOpJPDFhj/AMLOJxGObYKzZodeIBniF22Rn9UJY/RFVmhDENi','yassine','rezgui',''),(23,'test4875@gmail.com','[\"ROLE_USER\"]','$2y$13$NG7fNy9p3D4T61FkTIvOl.TDdpI9s5WqwyspXmhhfANK4taAJVfom','yassine','rezgui',''),(24,'test245152@gmail.com','[\"ROLE_USER\"]','$2y$13$j8ujPzQmDL2du5lEOcNlyOU/xnk.txloxm7/OktKX9UTp73F4c.Xu','yassine','rezgui',''),(25,'yass48541@gmail.com','[\"ROLE_USER\"]','$2y$13$OED/ydO4q4O69Hhg2LPNleWTSCEqb8HvL6lgxeYcMoVAssaHUjOka','yassine','rzg',''),(26,'yass4854451@gmail.com','[\"ROLE_USER\"]','$2y$13$V0oK7JvsGBPGSL.mMjGwy.0WIZECc0npGMdXDM9BcTQTnBeFFf/JC','yassine','rzg',''),(27,'yass485445451@gmail.com','[\"ROLE_USER\"]','$2y$13$rYNi2jG7Ut3nQnwTrFrYxO76XMath9lTE5jjOCB/FACIqr9Bv5AnC','yassine','rzg','');
+INSERT INTO `user` VALUES (20,'studiECF@test.com','[\"ROLE_ADMIN\"]','$2y$13$6aRW155U6cjI6HAfi3BJ5eFRcbS9pJt6Qj6pCq5yAKv9HUDmAPDiG','studiECF','studiECF','');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -407,7 +404,6 @@ CREATE TABLE `user_allergie` (
 
 LOCK TABLES `user_allergie` WRITE;
 /*!40000 ALTER TABLE `user_allergie` DISABLE KEYS */;
-INSERT INTO `user_allergie` VALUES (13,1),(13,2),(13,3),(15,1),(15,2),(15,3),(17,1),(17,2),(18,1),(19,2),(19,3);
 /*!40000 ALTER TABLE `user_allergie` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -447,4 +443,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-22 15:23:59
+-- Dump completed on 2023-05-22 16:17:23
