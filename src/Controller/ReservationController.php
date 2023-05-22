@@ -35,7 +35,7 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
     }
 
     #[Route('/reservations/{dateReservation<\d{4}-\d{2}-\d{2}>?}', name: 'app_reservation')]
-    public function index(EntityManagerInterface $entityManager, Request $request, RestaurantHoursRepository $restaurantHoursRepository, CreneauxRepository $creneauxRepository , UrlGeneratorInterface $urlGenerator,$dateReservation): Response
+    public function index(EntityManagerInterface $entityManager, Request $request, RestaurantHoursRepository $restaurantHoursRepository, CreneauxRepository $creneauxRepository ,$dateReservation): Response
     {
         $notificationEchec = null;
 

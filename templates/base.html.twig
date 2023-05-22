@@ -24,7 +24,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div id="container-img-logo">
-                <img src="{{ asset('imgLogo/logo.png') }}" id="img-logo-nav">
+                <a href="{{ path('app_home') }}"><img src="{{ asset('imgLogo/logo.png') }}" id="img-logo-nav"></a>
             </div>
         </div>
         <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -71,9 +71,9 @@
                 <li><a href="{{ path('app_cgu') }}">(CGU) Condition d'utilisation</a></li>
             </ul>
             <ul>
-                <li><a href="#"><img src="{{ asset('imgTest/icons8-facebook.svg') }}" style="width: 30px"></a></li>
-                <li><a href="#"><img src="{{ asset('imgTest/icons8-instagram.svg') }}"style="width: 30px"></a></li>
-                <li><a href="#"><img src="{{ asset('imgTest/icons8-twitter.svg') }}"style="width: 30px"></a></li>
+                <li><a href="#"><img src="{{ asset('imgTest/icons8-facebook.svg') }}"></a></li>
+                <li><a href="#"><img src="{{ asset('imgTest/icons8-instagram.svg') }}"></a></li>
+                <li><a href="#"><img src="{{ asset('imgTest/icons8-twitter.svg') }}"></a></li>
             </ul>
         </div>
 

@@ -88,7 +88,7 @@ h1,h2 {
     font-weight: bold;
 }
 
-.btn-contact-acceuil {
+.btn-menu-acceuil {
     background-color: darkorange;
     color: white;
     padding: 0.5rem 2rem;
@@ -473,6 +473,10 @@ fieldset {
 
    }
 
+ #hours-form legend {
+    text-align: center;
+ }
+
  #btn-back-home {
      display: none;
  }
@@ -849,9 +853,148 @@ a {
     display: none;
 }
 
+footer img {
+    width: 30px;
+}
+
 /* MEDIA QUERRIES PHONE */
 
 @media (max-width: 767px) {
+
+    .title-home {
+        font-size: 1rem;
+    }
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+    a {
+        font-size: 0.6rem;
+    }
+    .btn-voir-menu {
+        right: 25%;
+        padding: 0.7rem;
+    }
+    .btn-reservation {
+        padding: 0.7rem 1rem;
+        right: 5%;
+    }
+
+    .card-produit-content p {
+        font-size: 0.7rem;
+        margin-bottom: 0.5rem;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .card-produit-content div.text-center {
+        margin-top: 0rem !important;
+    }
+    .card-produit-content h3 {
+        font-size: 1rem;
+        margin-bottom: 1rem !important;
+    }
+
+    .card-produit-content {
+        margin-left: 0rem;
+        padding-top: 0;
+    }
+
+    .produit-content {
+        padding: 0 1rem;
+    }
+    .card-produit {
+        height: 12rem;
+    }
+    div.card-produit h3{
+        font-size: 0.9rem;
+        margin-bottom: 1rem !important;
+    }
+    div.card-produit div.card-body {
+        padding-top: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-left: 0.5rem;
+    }
+    div.card-produit div.card-body p {
+        font-size: 0.8rem;
+    }
+
+    .produit-price {
+        margin-bottom: 0;
+    }
+
+    footer img {
+        width: 20px;
+    }
+    .title-caroussel {
+        padding: 0 1rem;
+        font-size: 1rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    #menu-title-container h1 {
+        margin-bottom: 1rem !important;
+    }
+    #menu-title-container p {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .btn-reservation-acceuil, .btn-menu-acceuil {
+        font-size: 0.8rem;
+    }
+
+    #myCarousel  {
+        padding: 0;
+    }
+    #formule-background {
+        padding: 1rem;
+    }
+    #formule-background div.col {
+        margin-bottom: 2.5rem;
+    }
+    #formule-background div.col h6 {
+        margin-bottom: 1rem !important;
+    }
+    .card-produit-home {
+        height: 10rem;
+    }
+
+    #bestMenu-content {
+        width: 100%;
+        margin: 0;
+    }
+    .form-content-reservation {
+        padding: 2% 10%;
+        margin-bottom: 10rem;
+    }
+    .cgu-text {
+        padding: 0 10%;
+    }
+    .img-container-description {
+        margin-bottom: 10rem;
+    }
+
+    iframe {
+        width: 100%;
+    }
+    #hours div.col-lg-4 {
+        padding: 0 1rem !important;
+    }
+    #hours div.col-lg-4 div.mt-5 {
+        margin-top: 2rem !important;
+    }
+    #hours {
+        margin-bottom: 10rem;
+    }
+    .btn-caroussel {
+        font-size: 0.8rem;
+    }
 
     #img-logo-nav {
         width: 110px;

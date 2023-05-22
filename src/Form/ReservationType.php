@@ -34,9 +34,7 @@ class ReservationType extends AbstractType
             ])
             ->add('date', DateType::class, [
                 'widget' => 'single_text',
-                'data' => new \DateTimeImmutable()
-
-
+                'data' => new \DateTimeImmutable(),
             ])
             ->add('couverts', ChoiceType::class, [
                 'choices' => [
@@ -64,13 +62,14 @@ class ReservationType extends AbstractType
                 'required' => false,
                 'multiple' => true,
                 'expanded' => true,
-                'label' => 'Selectionnez vos allergies',
+                'label' => 'Voici les éventuelles allergies liées à notre restaurant',
                 'attr' => [
                     'class' => 'form-check',
                 ]
             ])
             ->add('Note', TextareaType::class, [
-                'label' => 'Avez-vous un message à nous transmettre ?'
+                'label' => 'Avez-vous un message à nous transmettre ?',
+                'required' => false,
             ])
 
         ;

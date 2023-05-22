@@ -35,7 +35,7 @@
                                     <h3 class="text-center mb-5">{{   bar.name }}</h3>
                                     <h3 id="title-img-produit" class="title-img">{{ bar.titreIllustration }}</h3>
                                     <p>{{ bar.description }}</p>
-                                    <p>{{ (bar.price / 100)|number_format(2, ',', '.')}} €</p>
+                                    <p class="produit-price">{{ (bar.price / 100)|number_format(2, ',', '.')}} €</p>
                                 </div>
                                 <div class="text-center mt-5">
                                     <button class="text-center btn-reservation">

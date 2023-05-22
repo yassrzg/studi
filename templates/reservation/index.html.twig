@@ -39,7 +39,7 @@
                             {{ form_row(form._token) }}
 
                             {% if times %}
-                                <div class="col-lg-6">
+                                <div class="col-lg-6" id="hours-form">
                                 {{ form_row(form.Heure) }}
                                 </div>
                                 <div class="btn-rez-countainer">
@@ -90,7 +90,7 @@
                     </div>
 
                     {% if times %}
-                        <div class="col-lg-6">
+                        <div class="col-lg-6" id="hours-form">
                             {{ form_row(form.Heure) }}
                         </div>
                         <div class="btn-rez-countainer">
@@ -109,8 +109,11 @@
 
 
         {% block javascripts %}
+            <!-- type de format de date -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+
             <script>
-                var dateField = document.querySelector('#reservation_date');
+                let dateField = document.querySelector('#reservation_date');
                 dateField.addEventListener('change', function(event) {
                     event.preventDefault();
                     var newDate = dateField.value;
@@ -120,14 +123,10 @@
                     window.location.replace(newUrl);
                 });
 
-                let parentDiv = document.querySelector('#reservation_Heure');
-                /*let formCheckDivs = parentDiv.querySelectorAll('.form-check');
-                formCheckDivs.forEach(function(div) {
-                    div.classList.add('btn');
-                }); */
 
-
-
+                var now = new Date();
+                var dateString = moment(now).format('YYYY-MM-DD');
+                dateField.setAttribute("min", dateString);
 
 
             </script>
