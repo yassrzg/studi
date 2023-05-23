@@ -19,7 +19,6 @@ class CreneauxCrudController extends AbstractCrudController
     {
         return [
             DateTimeField::new('Date'),
-            NumberField::new('NombreCouvert'),
             NumberField::new('NombreCouvertRestant'),
         ];
     }
